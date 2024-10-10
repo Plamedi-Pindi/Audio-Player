@@ -1,0 +1,22 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mainColor: #fff;
+  --mainLightColor: rgba(235, 235, 235, 0.5);
+  --mainDimColor: rgb(228, 228, 228);
+}
+
+#root{
+  width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  font-family: "Montserrat", system-ui;
+}
