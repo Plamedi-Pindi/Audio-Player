@@ -236,7 +236,7 @@ export default function App() {
         </div>
 
         <div 
-          className='w-36 h-5 bg-white absolute bottom-0 left-1/2 -translate-x-1/2 z-20 duration-300 cursor-pointer pt-4 rounded-t-md text-sm text-center hover:h-10 hover: text-black font-medium '
+          className='w-36 h-10 md:h-5 bg-white absolute bottom-0 left-1/2 -translate-x-1/2 z-20 duration-300 cursor-pointer pt-4 rounded-t-md text-sm text-center md:hover:h-10 hover: text-black font-medium '
           onClick={handleChangeBackground}
         >
           Change Background
