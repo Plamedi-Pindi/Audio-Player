@@ -5,11 +5,13 @@ import { useRef, useState } from 'react';
 // CSS ==================================
 import './index.css'
 
-import Chasing from './assets/music/first/Chasing - NEFFEX.mp3';
-import Baby from './assets/music/first//Baby doll [ slowed + reverb ] __ meet bros ,Kanika Kapoor __ jr santu.mp3';
-import AURORA from './assets/music/first/AURORA - Runaway (Lyrics).mp3';
-import Catch from './assets/music/first/Catch Me If I Fall - NEFFEX.mp3';
-import Inspired from './assets/music/first/Inspired (Clean) - NEFFEX.mp3';
+// Musics
+import Nair from './assets/music/first/Eu_vou_orar_.__Nair_Nany_(256k).mp3';
+import wonder from './assets/music/first/Mercy_Chinwo_-_Wonder__Official_Video_(48k).mp3';
+import eyano from './assets/music/first/Eyano(48k).mp3';
+import oke from './assets/music/first/Mercy_Chinwo_-_Oke_Mmiri__Live_(256k).mp3';
+import acessLove from './assets/music/first/Excess_Love__Remix___Official_Video____JJ_Hairston___Mercy_Chinwo(256k).mp3';
+
 
 // components ==============================================
 import PlayControl from './components/PlayControl/PlayControl';
@@ -53,13 +55,13 @@ export default function App() {
   
   const videoArray = [
     'https://www.dropbox.com/scl/fi/l01yiy3dcfzkua91jtxy6/video2.mp4?rlkey=iq4jrg8hxk1gx6mcsh8z5efle&st=91hkw4v2&raw=1',
+    'https://www.dropbox.com/scl/fi/xzpl8v08dg4ck0admdvts/6394054-uhd_4096_2048_24fps.mp4?rlkey=phmeuua2kuxbdc0zb7melqrhb&st=th6qpv1o&dl&raw=1',
   ];
   const handleChangeBackground = ()=> {
-    if (videoIndex >= videoArray.length - 1) {
-      setVideoIndex(0);
-    } else {
-      setVideoIndex(videoIndex + 1);
-    }
+     setVideoIndex((prevIndex) => {
+      const newIndex = prevIndex < videoArray.length - 1 ? prevIndex + 1 : 0;
+      return newIndex;
+    });
   }
  
 
@@ -92,10 +94,8 @@ export default function App() {
   const updatecurrentMusicDetails = (number: number) => {
     let musicObject = MusicAPI[number];
     if (currentAudio.current) {
-
       currentAudio.current.src = musicObject.songSrc
       currentAudio.current.play().catch(error => console.error(error));
-      console.log(musicObject)
     }
     setCurrentMusicObject(musicObject);
     setIsAudioPlay(true);
@@ -176,7 +176,7 @@ export default function App() {
 
         {/* Audio */}
         <audio
-          src={Chasing}
+          src={Nair}
           ref={currentAudio}
           onEnded={handleNextSong}
           onTimeUpdate={handleAudioUpdate}
@@ -184,6 +184,7 @@ export default function App() {
 
         {/* background video */}
         <video
+          key={videoArray[videoIndex]}
           className='absolute top-0 right-0 h-screen w-full object-cover -z-10 saturate-200'
           autoPlay
           muted
@@ -196,7 +197,7 @@ export default function App() {
         <div className='w-screen h-screen absolute pointer-events-none bg-black/30 right-0' ></div>
 
         {/* Music container */}
-        <div className='w-96 flex flex-col py-14 px-10 items-center justify-center text-center rounded-3xl shadow-box backdrop-blur-lg text-sm font-medium'>
+        <div className='w-[19.9rem] sm:w-96 flex flex-col py-14 px-10 items-center justify-center text-center rounded-3xl shadow-box backdrop-blur-lg text-sm font-medium'>
           <p className='m-0 mb-2 text-zinc-300'>Music Player</p>
           <p className='text-xl'>{currentMusicObject.songName}</p>
           <p className='text-zinc-200 text-base my-1 font-normal'> {currentMusicObject.songArtist} </p>
@@ -249,37 +250,37 @@ export default function App() {
 let MusicAPI = [
   {
     id: 1,
-    songName: 'Chasing',
-    songArtist: 'NEFFEX',
-    songSrc: Chasing,
-    songAvatar: './image1.jpg'
+    songName: 'Eu vou orar',
+    songArtist: 'Nair Nany',
+    songSrc: Nair,
+    songAvatar: 'https://i.imgur.com/9hs8YRc.jpg'
   },
   {
     id: 2,
-    songName: 'AURORA',
-    songArtist: 'Runaway',
-    songSrc: AURORA,
-    songAvatar: './image2.jpg'
+    songName: 'Eyano',
+    songArtist: 'Sandra Mbuyi',
+    songSrc: eyano,
+    songAvatar: 'https://i.imgur.com/nmccSuW.jpg'
   },
   {
     id: 3,
-    songName: 'Baby doll [ slowed + reverb ]',
-    songArtist: 'Kanika Kapoor',
-    songSrc: Baby,
-    songAvatar: './image3.jpg'
+    songName: 'Wonder',
+    songArtist: 'Mercy Chinwo',
+    songSrc: wonder,
+    songAvatar: 'https://i.imgur.com/K0BPyWp.jpg'
   },
   {
     id: 4,
-    songName: 'Catch Me If I Fall',
-    songArtist: 'NEFFEX',
-    songSrc: Catch,
-    songAvatar: './image4.jpg'
+    songName: 'Acess Love',
+    songArtist: 'Mercy Chinwo',
+    songSrc: acessLove,
+    songAvatar: 'https://i.imgur.com/76UlUVf.jpg'
   },
   {
     id: 5,
-    songName: 'Inspired (Clean)',
-    songArtist: 'NEFFEX',
-    songSrc: Inspired,
-    songAvatar: './image5.jpg'
+    songName: 'Oke Mmiri',
+    songArtist: 'Mercy Chinwo',
+    songSrc: oke,
+    songAvatar: 'https://i.imgur.com/PY630AM.jpg'
   },
 ];
