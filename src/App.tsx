@@ -1,5 +1,5 @@
 // Hooks ==================================
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import useSpotifyToken from './hooks/spotifyToken';
 
 // CSS ==================================
@@ -15,7 +15,7 @@ import Inspired from './assets/music/first/Inspired (Clean) - NEFFEX.mp3';
 import PlayControl from './components/PlayControl/PlayControl';
 
 // Axios
-import axios from 'axios';
+// import axios from 'axios';
 
 
 export default function App() {
@@ -24,8 +24,7 @@ export default function App() {
   const [audioProgress, setAudioProgress] = useState(0);
   const [avatarClassIndex, setAvatarClassIndex] = useState(0);
   const [isAudioPlay, setIsAudioPlay] = useState(false);
-  const [musics, setMusics] = useState(MusicAPI);
-  const [currentMusicObject, setCurrentMusicObject] = useState(musics[0]); // All musics variable
+  const [currentMusicObject, setCurrentMusicObject] = useState(MusicAPI[0]); // All musics variable
   const [musicIndex, setMusicsIndex] = useState(0);
   const [musicTotalLength, setMusicTotalLength] = useState('04 : 38');
   const [musicCurrentTime, setMusicCurrentTime] = useState('00 : 00');
@@ -33,21 +32,22 @@ export default function App() {
 
   // useRef variable
   const currentAudio = useRef<HTMLAudioElement | null>(null);
+
   
   // Getting Spotify token
   const token = useSpotifyToken();
 
-  useEffect(()=> {
-    // Function to get musics
-    const fetchMusic = async () => {
-      try {
-        const response = await axios.get("")
-      } catch (error) {
+  // useEffect(()=> {
+  //   // Function to get musics
+  //   const fetchMusic = async () => {
+  //     try {
+  //       const response = await axios.get("")
+  //     } catch (error) {
         
-      }
-    }
+  //     }
+  //   }
 
-  }, [])
+  // }, [])
 
   // Videos
   
@@ -65,7 +65,7 @@ export default function App() {
 
   // Next Song Event handler
   const handleNextSong = () => {
-    if (musicIndex >= musics.length - 1) {
+    if (musicIndex >= MusicAPI.length - 1) {
       let setNumber = 0;
       setMusicsIndex(setNumber);
       updatecurrentMusicDetails(setNumber);
@@ -90,7 +90,7 @@ export default function App() {
   }
 
   const updatecurrentMusicDetails = (number: number) => {
-    let musicObject = musics[number];
+    let musicObject = MusicAPI[number];
     if (currentAudio.current) {
 
       currentAudio.current.src = musicObject.songSrc
@@ -227,7 +227,7 @@ export default function App() {
           <PlayControl
             onClick={handleAudioPlay}
             isAudioPlay={isAudioPlay}
-            allMusics={musics}
+            allMusics={MusicAPI}
             handleNextSong={handleNextSong}
             handlePrevSong={handlePrevSong}
           />
