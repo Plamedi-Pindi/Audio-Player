@@ -1,6 +1,6 @@
 // Hooks ==================================
 import { useRef, useState } from 'react';
-import useSpotifyToken from './hooks/spotifyToken';
+// import useSpotifyToken from './hooks/spotifyToken';
 
 // CSS ==================================
 import './index.css'
@@ -35,7 +35,7 @@ export default function App() {
 
   
   // Getting Spotify token
-  const token = useSpotifyToken();
+  // const token = useSpotifyToken();
 
   // useEffect(()=> {
   //   // Function to get musics
@@ -199,7 +199,6 @@ export default function App() {
         <div className='w-96 flex flex-col py-14 px-10 items-center justify-center text-center rounded-3xl shadow-box backdrop-blur-lg text-sm font-medium'>
           <p className='m-0 mb-2 text-zinc-300'>Music Player</p>
           <p className='text-xl'>{currentMusicObject.songName}</p>
-          <p className='text-xl'>{token ? token : 'Carregando token'}</p>
           <p className='text-zinc-200 text-base my-1 font-normal'> {currentMusicObject.songArtist} </p>
 
           {/* Song Avatar */}
