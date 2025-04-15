@@ -11,9 +11,9 @@ Mini reprodutor de audio
 
   ### Sobre os audios
   O sistema possui 5 faixas de músicas de seguintes autores:
-    1. Nair Nani (Cantora gospel angolana)=> Música: "Eu vou orar"
-    2. Mercy Chinwo (Cantora gospel nigeriana)=> Músicas: "Wonder", "Excess Love" e "Oke Mmiri"
-    3. Sandra Mbuyi(Cantora gospel congolense)=> Música: "Eyano"
+    * 1. Nair Nani (Cantora gospel angolana)=> Música: "Eu vou orar"
+    * 2. Mercy Chinwo (Cantora gospel nigeriana)=> Músicas: "Wonder", "Excess Love" e "Oke Mmiri"
+    * 3. Sandra Mbuyi(Cantora gospel congolense)=> Música: "Eyano"
 
 ## Ferramentas 🛠️
 
@@ -31,6 +31,6 @@ Mini reprodutor de audio
      npm install
     
  3. Execute o servidor de desenvolvimento
-  ```sh
+    ```sh
      npm run dev
     
