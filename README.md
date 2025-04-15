@@ -22,4 +22,4 @@ Mini reprodutor de audio
  * Tailwindcss
 
 ## strutura do projeto
- ´´´sh
+ ```sh
