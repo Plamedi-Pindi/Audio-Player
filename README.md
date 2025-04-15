@@ -21,5 +21,16 @@ Mini reprodutor de audio
  * Typescript
  * Tailwindcss
 
-## strutura do projeto
- ```sh
+## Como Executar o Projeto
+ 1. Clonar o repositório
+    ```sh
+     git clone https://github.com/Plamedi-Pindi/Audio-Player.git
+    
+ 2. Instale as dependências
+    ```sh
+     npm install
+    
+ 3. Execute o servidor de desenvolvimento
+  ```sh
+     npm run dev
+    
