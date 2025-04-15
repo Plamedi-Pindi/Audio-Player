@@ -2,12 +2,18 @@
 
 Mini reprodutor de audio 
 
-## Funcionalidades
+## Funcionalidades 🔗
 
-* Reproduzir audio
-* Trocar as faixas de músicas para traz para frente
+  * Reproduzir audio
+  * Trocar as faixas de músicas para traz ou frente
 
-## Ferramentas
+  ### Sobre os audios
+  O sistema possui 5 faixas de músicas de seguintes autores:
+    1. Nair Nani
+    1. Mercy 
+    1. Sandra Mbuyi
+
+## Ferramentas 🛠️
 
 * React.js
 * Typescript
