@@ -2,6 +2,9 @@
 
 Mini reprodutor de audio 
 
+![Banner do projeto](https://meusite.com/imagens/banner.png)
+
+
 ## Funcionalidades 📌
 
   * Reproduzir audio
