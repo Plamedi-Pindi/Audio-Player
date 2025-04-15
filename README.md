@@ -2,7 +2,7 @@
 
 Mini reprodutor de audio 
 
-![Banner do projeto](https://meusite.com/imagens/banner.png)
+[![Banner do projeto](https://meusite.com/imagens/banner.png)](https://audio-player-five-gamma.vercel.app/)
 
 
 ## Funcionalidades 📌
