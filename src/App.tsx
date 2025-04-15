@@ -272,7 +272,7 @@ let MusicAPI = [
   },
   {
     id: 4,
-    songName: 'Acess Love',
+    songName: 'Excess Love',
     songArtist: 'Mercy Chinwo',
     songSrc: acessLove,
     songAvatar: 'https://i.imgur.com/76UlUVf.jpg'
